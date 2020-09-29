@@ -5,7 +5,7 @@
 
 #### <a name="d"></a>Description
 
-This ReadMe file contains code and data the Getting Started with SAP HANA Express Edition and SAP Analytics Cloud video series. Please note that this file is subject to changes and additions.
+This ReadMe file contains code and data for the "Getting Started with SAP HANA Express Edition and SAP Analytics Cloud" video series. Please note that this file is subject to changes and additions.
 
 1) [Data Download](#dd)
 2) [HANA Data SQL](#hds)
