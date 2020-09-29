@@ -3,7 +3,7 @@
 <tr><td><h3>Partner Video Series</h3></td><td width=75%></br>Getting Started with SAP HANA Express Edition and SAP Analytics Cloud</td>
 </table>
 
-### Description
+#### <a name="d"></a>Description
 
 This ReadMe file contains links to the Getting Started with SAP HANA Express Edition and SAP Analytics Cloud video series. Please note that this file is subject to changes and additions.
 
@@ -136,6 +136,7 @@ WITH
    ERROR LOG '/mnt/hgfs/SampleData/Orders.csv.err'
 ;
 ```
+[Go back to the top of this ReadMe.](#d)
 
 #### <a name="ahcs"></a>Additional HANA Code Snippets
 
@@ -164,6 +165,7 @@ grant "HA_PROJECT_1"."HA_MTA.HA_DB::analytics" to HA_USER;
 grant "HA_PROJECT_1::external_privileges_role" to HA_USER;
 
 ```
+[Go back to the top of this ReadMe.](#d)
 
 #### <a name="lcc"></a>Live Connection Commands
 
@@ -322,4 +324,5 @@ Define SAC your.sac.instance
     Header set Access-Control-Expose-Headers "x-csrf-token"
 </If>
 ```
+[Go back to the top of this ReadMe.](#d)
 
