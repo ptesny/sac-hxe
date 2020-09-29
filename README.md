@@ -3,7 +3,128 @@ Getting Started with SAP HANA express edition and SAP Analytics Cloud
 
 In this series of videos we will walk through the steps to install and configure your very own instance of SAP HANA express edition in order to make a live connection from the database model to an SAP Analytics Cloud visualization.  From installation of the software to loading and modeling the data, to creating a visualization story, this series helps you get started today using the free SAP HANA express edition and trial account with SAP Analytics Cloud. This course is for anyone just starting with SAP HANA and SAC who would like to have a sandbox environment for experimentation and learning.
 
-Code Snippets
+HANA Data SQL
+
+```
+create table HA_DATA.PRODUCT (
+   PRODUCT_ID BIGINT not null,
+   PRODUCT_NAME VARCHAR(128),
+   COLOR VARCHAR(64),
+   SIZE VARCHAR(32),
+   DEMOGRAPHIC VARCHAR(32),
+   PRICE DECIMAL(8,2),
+   PRODUCT_TYPE_ID BIGINT,
+   PRODUCT_CLASS VARCHAR(64),
+   SUPPLIER_ID BIGINT
+);
+
+alter table HA_DATA.PRODUCT
+   add constraint PK_PRODUCT primary key cpbtree (PRODUCT_ID);
+
+
+create table HA_DATA.ORDER_DETAIL (
+   ORDER_ID BIGINT not null,
+   PRODUCT_ID BIGINT not null,
+   QUANTITY	 INTEGER
+);
+
+alter table HA_DATA.ORDER_DETAIL
+   add constraint PK_ORDER_DETAIL primary key cpbtree (ORDER_ID, PRODUCT_ID);
+
+create index RELATIONSHIP_1_FK on HA_DATA.ORDER_DETAIL (PRODUCT_ID);
+
+
+alter table HA_DATA.ORDER_DETAIL
+   add constraint FK_ORDER_RELATIONS_PRODUCT foreign key (PRODUCT_ID)
+      references HA_DATA.PRODUCT (PRODUCT_ID) on delete restrict on update restrict;
+
+
+IMPORT FROM CSV FILE '/mnt/hgfs/SampleData/Product.csv' INTO HA_DATA.PRODUCT
+WITH
+   RECORD DELIMITED BY '\n'
+   FIELD DELIMITED BY ','
+   OPTIONALLY ENCLOSED BY '"'
+   SKIP FIRST 1 ROW
+   FAIL ON INVALID DATA
+   ERROR LOG '/mnt/hgfs/SampleData/Product.csv.err'
+;
+
+IMPORT FROM CSV FILE '/mnt/hgfs/SampleData/Orders_Detail.csv' INTO HA_DATA.ORDER_DETAIL
+WITH
+   RECORD DELIMITED BY '\n'
+   FIELD DELIMITED BY ','
+   OPTIONALLY ENCLOSED BY '"'
+   SKIP FIRST 1 ROW
+   FAIL ON INVALID DATA
+   ERROR LOG '/mnt/hgfs/SampleData/Orders_Detail.csv.err'
+;
+
+
+
+create table HA_DATA.CUSTOMER (
+	CUSTOMER_ID BIGINT not null,
+	NAME VARCHAR(64),
+	CONTACT_FIRST VARCHAR(32),
+	CONTACT_LAST VARCHAR(32),
+	CONTACT_TITLE VARCHAR(16),
+	CONTACT_POSITION VARCHAR(64),
+	LAST_YEAR_SALES DECIMAL(11,2),
+	ADDRESS_1 VARCHAR(128),
+	ADDRESS_2 VARCHAR(64),
+	CITY VARCHAR(32),
+	REGION VARCHAR(64),
+	COUNTRY VARCHAR(64),
+	POSTAL_CODE VARCHAR(32),
+	EMAIL VARCHAR(64),
+	PHONE VARCHAR(32)
+);
+
+alter table HA_DATA.CUSTOMER
+   add constraint PK_CUSTOMER primary key cpbtree (CUSTOMER_ID);
+
+
+create table HA_DATA.SAMPLE_ORDER (
+	ORDER_ID BIGINT not null,
+	CUSTOMER_ID BIGINT not null,
+	ORDER_DATE DATE,
+	REQUIRED_DATE DATE,
+	SHIP_DATE DATE,
+	SHIP_VIA VARCHAR(32),
+	SHIPPED BOOLEAN,
+	PO INTEGER,
+	PAYMENT_RECEIVED BOOLEAN
+);
+
+alter table HA_DATA.SAMPLE_ORDER
+   add constraint PK_ORDER primary key cpbtree (ORDER_ID);
+
+create index RELATIONSHIP_2_FK on HA_DATA.ORDER_DETAIL (ORDER_ID);
+
+create index RELATIONSHIP_3_FK on HA_DATA.SAMPLE_ORDER (CUSTOMER_ID);
+
+
+IMPORT FROM CSV FILE '/mnt/hgfs/SampleData/Customer.csv' INTO HA_DATA.CUSTOMER
+WITH
+   RECORD DELIMITED BY '\n'
+   FIELD DELIMITED BY ','
+   OPTIONALLY ENCLOSED BY '"'
+   SKIP FIRST 1 ROW
+   FAIL ON INVALID DATA
+   ERROR LOG '/mnt/hgfs/SampleData/Customer.csv.err'
+;
+
+IMPORT FROM CSV FILE '/mnt/hgfs/SampleData/Orders.csv' INTO HA_DATA.SAMPLE_ORDER
+WITH
+   RECORD DELIMITED BY '\n'
+   FIELD DELIMITED BY ','
+   OPTIONALLY ENCLOSED BY '"'
+   SKIP FIRST 1 ROW
+   FAIL ON INVALID DATA
+   ERROR LOG '/mnt/hgfs/SampleData/Orders.csv.err'
+;
+```
+
+Additional HANA Code Snippets
 
 ```
 hdbsql -n localhost:39013 -u SYSTEM
