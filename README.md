@@ -3,6 +3,10 @@
 <tr><td><h3>Partner Video Series</h3></td><td width=75%></br>Getting Started with SAP HANA Express Edition and SAP Analytics Cloud</td>
 </table>
 
+### Description
+
+This ReadMe file contains links to the Getting Started with SAP HANA Express Edition and SAP Analytics Cloud video series. Please note that this file is subject to changes and additions.
+
 1) [Data Download](#dd)
 2) [HANA Data SQL](#hds)
 3) [Additional HANA Code Snippets](#ahcs)
