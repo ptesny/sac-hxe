@@ -177,6 +177,9 @@ Define SAC your.sac.instance
 
 [Click here to download the Sample Data.](/SampleData.zip?raw=true)
 
+[Go back to the top of this ReadMe.](#d)
+
+
 #### <a name="hds"></a>HANA Data SQL
 
 ```
@@ -298,6 +301,7 @@ WITH
 ;
 ```
 [Go back to the top of this ReadMe.](#d)
+
 
 #### <a name="ahcs"></a>Additional HANA Code Snippets
 
