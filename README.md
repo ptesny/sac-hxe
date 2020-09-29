@@ -1,5 +1,5 @@
 <table width=100% border=0>
-<tr ><td colspan=2><h1>SAP Analytics Cloud</h1></td></tr>
+<tr ><td colspan=2><h1>SAP Analytics Cloud & HANA Express</h1></td></tr>
 <tr><td><h3>Partner Video Series</h3></td><td width=75%></br>Getting Started with SAP HANA Express Edition and SAP Analytics Cloud</td>
 </table>
 
