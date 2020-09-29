@@ -3,6 +3,7 @@ Getting Started with SAP HANA express edition and SAP Analytics Cloud
 
 1) [HANA Data SQL](#hds)
 2) [Additional HANA Code Snippets](#ahcs)
+3) [Live Connection Commands](#lcc)
 
 #### <a name="hds"></a>HANA Data SQL
 
@@ -153,7 +154,7 @@ grant "HA_PROJECT_1::external_privileges_role" to HA_USER;
 
 ```
 
-Live Connection Commands
+#### <a name="lcc"></a>Live Connection Commands
 
 ```
 sudo openssl genrsa -rand /var/log/y2log:/var/log/messages \
