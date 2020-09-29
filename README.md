@@ -1,4 +1,4 @@
-# Getting Started with SAP HANA express edition and SAP Analytics Cloud
+# Getting Started with SAP HANA Express Edition and SAP Analytics Cloud
 
 1) [HANA Data SQL](#hds)
 2) [Additional HANA Code Snippets](#ahcs)
