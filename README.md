@@ -7,7 +7,7 @@
 
 #### <a name="dd"></a>Data Download
 
-[Click here to download the Sample Data.](/SampleData.zip?raw=true
+[Click here to download the Sample Data.](/SampleData.zip?raw=true)
 https://github.com/saphanaacademy/sac-hxe/blob/master/SampleData.zip?raw=true
 
 
