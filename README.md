@@ -150,3 +150,161 @@ grant "HA_PROJECT_1::external_privileges_role" to HA_USER;
 
 ```
 
+Live Connection Commands
+
+```
+sudo openssl genrsa -rand /var/log/y2log:/var/log/messages \
+        -out /etc/apache2/ssl.key/ca.key 2048
+
+
+cat >~/.mkcert.cfg <<EOT
+[ req ]
+default_bits  = 2048
+default_keyfile  = keyfile.pem
+distinguished_name = req_distinguished_name
+attributes  = req_attributes
+prompt  = no
+output_password = mypass
+
+[ req_distinguished_name ]
+C  = DE
+ST = Baden-Wuerttemberg
+L  = Walldorf
+O  = SAP
+OU  = Digital Partner Engineering
+CN  = hxehost.localdomain
+emailAddress  = digitalenablement@sap.com
+
+[ req_attributes ]
+challengePassword  = 1234
+EOT
+
+
+sudo openssl req -new -x509 -days 365 \
+        -config ~/.mkcert.cfg \
+        -key /etc/apache2/ssl.key/ca.key \
+        -out /etc/apache2/ssl.crt/ca.crt 
+
+
+sudo openssl genrsa -rand /etc/rc.config:/var/log/messages \
+        -out /etc/apache2/ssl.key/server.key 2048
+
+
+sudo openssl req -new \
+        -config ~/.mkcert.cfg \
+        -key /etc/apache2/ssl.key/server.key \
+        -out /etc/apache2/ssl.csr/server.csr
+
+
+cat >~/.mkcert.cfg <<EOT
+extensions = x509v3
+[ x509v3 ]
+subjectAltName   = email:copy
+nsComment        = SAP Digital Partner Engineering
+nsCertType       = server
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = *.localdomain
+DNS.2 = hxehost.localdomain
+EOT
+
+
+test -f ~/.mkcert.serial || echo 01 >~/.mkcert.serial
+
+
+sudo openssl x509 -req -days 365 \
+        -extfile ~/.mkcert.cfg \
+        -CAserial ~/.mkcert.serial \
+        -CA /etc/apache2/ssl.crt/ca.crt \
+        -CAkey /etc/apache2/ssl.key/ca.key \
+        -in /etc/apache2/ssl.csr/server.csr  \
+        -out /etc/apache2/ssl.crt/server.crt 
+
+
+sudo chmod 0666 /etc/apache2/ssl.crt/server.crt
+
+sudo openssl dhparam 2048  >> /etc/apache2/ssl.crt/server.crt
+
+
+cd /etc/apache2
+cd vhosts.d
+sudo vim hxehost-ssl.conf
+
+<IfDefine SSL>
+<IfDefine !NOSSL>
+<VirtualHost _default_:443>
+        ServerAdmin digitalenablement@sap.com
+        ServerName hxehost.localdomain
+        DocumentRoot /srv/www/htdocs
+        ErrorLog /var/log/apache2/error_log
+        TransferLog /var/log/apache2/access_log
+        CustomLog /var/log/apache2/ssl_request_log   ssl_combined
+        ProxyPreserveHost on 
+        SSLEngine on
+        SSLProxyEngine on
+        SSLCertificateFile /etc/apache2/ssl.crt/server.crt
+        SSLCertificateKeyFile /etc/apache2/ssl.key/server.key
+        <Location />
+           ProxyPass https://hxehost.localdomain:4390/ 
+           ProxyPassReverse https://hxehost.localdomain:4390/ 
+        </Location>
+</VirtualHost>
+</IfDefine>
+</IfDefine>
+
+
+sudo systemctl reload apache2
+sudo systemctl status apache2
+
+
+sudo cat /etc/apache2/ssl.crt/ca.crt
+
+hdbsql -n localhost:39015 -u SYSTEM
+
+\mu ON
+
+ALTER SYSTEM ALTER CONFIGURATION ('xsengine.ini', 'database') 
+SET ('httpserver', 'sessiontimeout') ='43200' 
+WITH RECONFIGURE;
+
+ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'database') 
+SET ('session', 'idle_connection_timeout') ='900' 
+WITH RECONFIGURE;
+
+CALL GRANT_ACTIVATED_ROLE('sap.hana.xs.admin.roles::RuntimeConfAdministrator','HA_USER');
+CALL GRANT_ACTIVATED_ROLE('sap.hana.xs.admin.roles::SAMLViewer','HA_USER');
+CALL GRANT_ACTIVATED_ROLE('sap.bc.ina.service.v2.userRole::INA_USER','HA_USER');
+
+ALTER SYSTEM ALTER CONFIGURATION ('xsengine.ini', 'database') SET ('public_urls', 'http_url') = 'http://hxehost.localdomain:8090' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('xsengine.ini', 'database') SET ('public_urls', 'https_url') = 'https://hxehost.localdomain:4390' WITH RECONFIGURE;
+
+hdbsql -n localhost:39015 -u HA_USER
+
+UPDATE "_SYS_XS"."RUNTIME_CONFIGURATION"
+SET "CONFIGURATION" = ' {"cors":{
+  "enabled":true,
+  "allowOrigin":["https://your.sac.instance"],
+  "exposeHeaders":["x-csrf-token"],
+  "allowHeaders":["accept-language","x-sap-cid","x-request-with","x-csrf-token","content-type","authorization","accept"],
+  "allowMethods":["GET","HEAD","POST","OPTIONS"],
+  "maxAge":3600}
+}'
+WHERE "PACKAGE_ID" = 'sap.bc.ina.service.v2';
+
+
+
+Define SAC your.sac.instance
+
+<If "req_novary('ORIGIN') == 'https://${SAC}'">
+    Header set Access-Control-Allow-Origin "https://${SAC}"
+    Header set Access-Control-Allow-Credentials true
+    Header set Access-Control-Allow-Methods "GET, POST, PUT"
+    Header set Access-Control-Allow-Headers "X-Csrf-Token, x-csrf-token, x-sap-cid, Content-Type, Authorization"
+    Header set Access-Control-Expose-Headers "x-csrf-token"
+</If>
+```
+
