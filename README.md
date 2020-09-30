@@ -12,11 +12,45 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 
 ### ReadMe Contents
 
-1) [Live Connection Commands](#lcc)
-2) [Data Download](#dd)
-3) [HANA Data SQL](#hds)
-4) [Additional HANA Code Snippets](#ahcs)
+1) [Links to Referenced Blogs Etc.](#rbe)
+2) [Live Connection Commands](#lcc)
+3) [Data Download](#dd)
+4) [HANA Data SQL](#hds)
+5) [Additional HANA Code Snippets](#ahcs)
 <br>
+
+
+### <a name="rbe"></a>Links to Referenced Blogs Etc.
+
+&nbsp;&nbsp;&nbsp;Download HANA Express from here: 
+https://www.sap.com/cmp/td/sap-hana-express-edition.html
+<br>
+&nbsp;&nbsp;&nbsp;Info on HXE download manager and optional installation packages: 
+https://developers.sap.com/tutorials/hxe-ua-download-vm.html
+<br>
+&nbsp;&nbsp;&nbsp;Initial HXE setup instructions: 
+https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html 
+<br>
+&nbsp;&nbsp;&nbsp;Blog on setting up reverse proxy for SAC live connections: 
+https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
+<br>
+&nbsp;&nbsp;&nbsp;Blog on setting up reverse proxy for SAC live connections: 
+https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
+<br>
+&nbsp;&nbsp;&nbsp;Blogs on the SameSite cookie issue: 
+https://www.sapanalytics.cloud/direct-live-connections-in-sap-analytics-cloud-and-samesite-cookies/
+https://blogs.sap.com/2020/08/26/how-to-fix-google-chrome-samesite-cookie-issue-with-sac-and-hana/
+<br>
+&nbsp;&nbsp;&nbsp;Mapping development space to HXE tenant DB:
+https://developers.sap.com/tutorials/xsa-tenant-db-space.html
+<br>
+&nbsp;&nbsp;&nbsp;Access a classic schema from an HDI container:
+https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html
+
+[Go back to the top of this ReadMe.](#t)
+<br>
+<br>
+
 
 ### <a name="lcc"></a>Live Connection Commands
 
