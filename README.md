@@ -3,13 +3,13 @@
 <tr><td><h3>Partner Video Series</h3></td><td width=75%></br>Getting Started with SAP HANA Express Edition and SAP Analytics Cloud</td>
 </table>
 
-#### <a name="d"></a>Description
+### <a name="d"></a>Description
 
 This ReadMe file contains code and data for the "Getting Started with SAP HANA Express Edition and SAP Analytics Cloud" video series.  Please note that this file is subject to changes and additions.
 
 [Click here to go to the playlist for the video series](https://www.youtube.com/playlist?list=PLkzo92owKnVxc5ywbnmPjmTPTUSZVlDIy) on the SAP HANA Academy YouTube channel.
 
-#### <a name="d"></a>ReadMe Contents
+### <a name="d"></a>ReadMe Contents
 
 1) [Live Connection Commands](#lcc)
 2) [Data Download](#dd)
@@ -17,7 +17,7 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 4) [Additional HANA Code Snippets](#ahcs)
 <br>
 
-#### <a name="lcc"></a>Live Connection Commands
+### <a name="lcc"></a>Live Connection Commands
 
 ```
 sudo openssl genrsa -rand /var/log/y2log:/var/log/messages \
@@ -178,13 +178,13 @@ Define SAC your.sac.instance
 <br>
 <br>
 
-#### <a name="dd"></a>Data Download
+### <a name="dd"></a>Data Download
 
 [Click here to download the Sample Data.](/SampleData.zip?raw=true)
 <br>
 <br>
 
-#### <a name="hds"></a>HANA Data SQL
+### <a name="hds"></a>HANA Data SQL
 
 ```
 create table HA_DATA.PRODUCT (
