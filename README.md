@@ -8,7 +8,7 @@
 
 This ReadMe file contains code and data for the **Getting Started with SAP HANA Express Edition and SAP Analytics Cloud** video series.  Please note that this file is subject to changes and additions.
 
-[Click here to go to this playlist for the video series](https://www.youtube.com/playlist?list=PLkzo92owKnVxc5ywbnmPjmTPTUSZVlDIy) on the SAP HANA Academy YouTube channel.
+[Click here to go to the playlist for this video series](https://www.youtube.com/playlist?list=PLkzo92owKnVxc5ywbnmPjmTPTUSZVlDIy) on the SAP HANA Academy YouTube channel.
 
 ### ReadMe Contents
 
