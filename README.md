@@ -5,7 +5,7 @@
 
 #### <a name="d"></a>Description
 
-This ReadMe file contains code and data for the "Getting Started with SAP HANA Express Edition and SAP Analytics Cloud" video series. The playlist for the video series, on the SAP HANA Academy YouTube channel, is <a>here</a>. Please note that this file is subject to changes and additions.
+This ReadMe file contains code and data for the "Getting Started with SAP HANA Express Edition and SAP Analytics Cloud" video series. The playlist for the video series, on the SAP HANA Academy YouTube channel, is [here](https://www.youtube.com/playlist?list=PLkzo92owKnVxc5ywbnmPjmTPTUSZVlDIy ). Please note that this file is subject to changes and additions.
 
 1) [Live Connection Commands](#lcc)
 2) [Data Download](#dd)
