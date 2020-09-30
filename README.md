@@ -29,10 +29,11 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 &nbsp;&nbsp;&nbsp;* SAP Analytics Cloud: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sapanalytics.cloud/ 
+<br><br>
 &nbsp;&nbsp;&nbsp;* SAP HANA Tutorials and other editions: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/topics/hana.html 
-•
+<br><br>
 &nbsp;&nbsp;&nbsp;* Info on HXE download manager and optional installation packages: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/hxe-ua-download-vm.html
