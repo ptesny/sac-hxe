@@ -1,9 +1,10 @@
+<a name="d"></a>
 <table width=100% border=0>
 <tr ><td colspan=2><h1>SAP Analytics Cloud & HANA Express</h1></td></tr>
 <tr><td><h3>Partner Video Series</h3></td><td width=75%></br>Getting Started with SAP HANA Express Edition and SAP Analytics Cloud</td>
 </table>
 
-### <a name="d"></a>Description
+### Description
 
 This ReadMe file contains code and data for the "Getting Started with SAP HANA Express Edition and SAP Analytics Cloud" video series.  Please note that this file is subject to changes and additions.
 
