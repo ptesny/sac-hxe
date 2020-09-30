@@ -173,6 +173,7 @@ Define SAC your.sac.instance
 [Go back to the top of this ReadMe.](#d)
 
 
+
 #### <a name="dd"></a>Data Download
 
 [Click here to download the Sample Data.](/SampleData.zip?raw=true)
@@ -300,6 +301,7 @@ WITH
 ;
 ```
 [Go back to the top of this ReadMe.](#d)
+
 
 
 #### <a name="ahcs"></a>Additional HANA Code Snippets
