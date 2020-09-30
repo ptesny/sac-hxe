@@ -11,8 +11,7 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 2) [Data Download](#dd)
 3) [HANA Data SQL](#hds)
 4) [Additional HANA Code Snippets](#ahcs)
-
-
+<br>
 #### <a name="lcc"></a>Live Connection Commands
 
 ```
@@ -171,15 +170,13 @@ Define SAC your.sac.instance
 </If>
 ```
 [Go back to the top of this ReadMe.](#d)
-
-
-
+<br>
+<br>
 #### <a name="dd"></a>Data Download
 
 [Click here to download the Sample Data.](/SampleData.zip?raw=true)
-
-
-
+<br>
+<br>
 #### <a name="hds"></a>HANA Data SQL
 
 ```
@@ -301,9 +298,8 @@ WITH
 ;
 ```
 [Go back to the top of this ReadMe.](#d)
-
-
-
+<br>
+<br>
 #### <a name="ahcs"></a>Additional HANA Code Snippets
 
 ```
