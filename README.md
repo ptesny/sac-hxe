@@ -12,7 +12,7 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 
 ### ReadMe Contents
 
-1) [Links to Referenced Blogs Etc.](#rbe)
+1) [Links to Referenced Content](#rbe)
 2) [Live Connection Commands](#lcc)
 3) [Data Download](#dd)
 4) [HANA Data SQL](#hds)
@@ -20,7 +20,7 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 <br>
 
 
-### <a name="rbe"></a>Links to Referenced Blogs Etc.
+### <a name="rbe"></a>Links to Referenced Content
 
 &nbsp;&nbsp;&nbsp;* Download HANA Express from here: 
 <br>
