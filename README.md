@@ -24,11 +24,11 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 
 * HANA Express Edition (HXE): 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sap.com/cmp/td/sap-hana-express-edition.html
-<br><br>
+<br>
 * SAP Analytics Cloud: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sapanalytics.cloud/ 
-<br><br>
+<br>
 * SAP HANA Tutorials and other editions: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/topics/hana.html 
