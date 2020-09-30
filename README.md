@@ -24,37 +24,37 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 
 &nbsp;&nbsp;&nbsp;Download HANA Express from here: 
 <br>
-&nbsp;&nbsp;&nbsp;https://www.sap.com/cmp/td/sap-hana-express-edition.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sap.com/cmp/td/sap-hana-express-edition.html
 <br>
 &nbsp;&nbsp;&nbsp;Info on HXE download manager and optional installation packages: 
 <br>
-&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/hxe-ua-download-vm.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/hxe-ua-download-vm.html
 <br>
 &nbsp;&nbsp;&nbsp;Initial HXE setup instructions: 
 <br>
-&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html 
 <br>
 &nbsp;&nbsp;&nbsp;Blog on setting up reverse proxy for SAC live connections: 
 <br>
-&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
 <br>
 &nbsp;&nbsp;&nbsp;Blog on setting up reverse proxy for SAC live connections: 
 <br>
-&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2019/06/28/apache-reverse-proxy-for-https-ssl/
 <br>
 &nbsp;&nbsp;&nbsp;Blogs on the SameSite cookie issue: 
 <br>
-&nbsp;&nbsp;&nbsp;https://www.sapanalytics.cloud/direct-live-connections-in-sap-analytics-cloud-and-samesite-cookies/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sapanalytics.cloud/direct-live-connections-in-sap-analytics-cloud-and-samesite-cookies/
 <br>
-&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2020/08/26/how-to-fix-google-chrome-samesite-cookie-issue-with-sac-and-hana/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://blogs.sap.com/2020/08/26/how-to-fix-google-chrome-samesite-cookie-issue-with-sac-and-hana/
 <br>
 &nbsp;&nbsp;&nbsp;Mapping development space to HXE tenant DB:
 <br>
-&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/xsa-tenant-db-space.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/xsa-tenant-db-space.html
 <br>
 &nbsp;&nbsp;&nbsp;Access a classic schema from an HDI container:
 <br>
-&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html
 
 [Go back to the top of this ReadMe.](#t)
 <br>
