@@ -22,7 +22,7 @@ This ReadMe file contains code and data for the "Getting Started with SAP HANA E
 
 ### <a name="rbe"></a>Links to Referenced Blogs Etc.
 
-&nbsp;&nbsp;&nbsp;Download HANA Express from here: 
+&nbsp;&nbsp;&nbsp;* Download HANA Express from here: 
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://www.sap.com/cmp/td/sap-hana-express-edition.html
 <br><br>
